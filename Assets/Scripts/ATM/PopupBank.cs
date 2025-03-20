@@ -25,6 +25,7 @@ public class PopupBank : MonoBehaviour
                 GameManager.Instance.userData.balanceInt += amount;
                 GameManager.Instance.userData.cashInt -= amount;
                 atmScreen.Refresh();
+                GameManager.Instance.Save();
             }
             else
             {
@@ -39,7 +40,8 @@ public class PopupBank : MonoBehaviour
                 GameManager.Instance.userData.balanceInt -= amount;
                 GameManager.Instance.userData.cashInt += amount;
                 atmScreen.Refresh();
-            }
+                GameManager.Instance.Save();
+        }
             else
             {
                 popupScreen.SetActive(true);

@@ -13,3 +13,11 @@ public class UserData : ScriptableObject
     public int cashInt; // 현금 잔액 (정수형)
     public int balanceInt; // 통장 잔액 (정수형)
 }
+
+public class SaveData
+{
+    public string userNameSave;
+    public int cashIntSave;
+    public int balanceIntSave;
+}
+
