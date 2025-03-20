@@ -10,6 +10,6 @@ public class UserData : ScriptableObject
 {
     [Header("User Info")]
     public string userName; // 유저 네임
-    public int cash; // 현금 
-    public int balance; // 통장 잔액
+    public int cashInt; // 현금 잔액 (정수형)
+    public int balanceInt; // 통장 잔액 (정수형)
 }

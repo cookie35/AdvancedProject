@@ -8,8 +8,8 @@ public class ATMScreen : MonoBehaviour
     public GameObject atmWindow;  // 인스펙터 창에서 넣어 줄 atmUi
 
     [Header("PopupBank")]
-    public TextMeshProUGUI balance;  // 통장 잔고 숫자
-    public TextMeshProUGUI cash; // 갖고 있는 현금
+    public TextMeshProUGUI cashTxt; // 스크린에 표시되는 현금 잔고 (텍스트)
+    public TextMeshProUGUI balanceTxt;  // 스크린에 표시되는 통장 잔고 (텍스트)
     public GameObject depositButton;  // 입금 버튼
     public GameObject withdrawButton;  // 출금 버튼
     
@@ -20,7 +20,8 @@ public class ATMScreen : MonoBehaviour
 
     public void Refresh()
     {
-        balance.text = $"{GameManager.Instance.userDataSO.balance:N0}";
-        cash.text = $"{GameManager.Instance.userDataSO.cash:N0}";
+        balanceTxt.text = $"{GameManager.Instance.userData.balanceInt:N0}";
+        cashTxt.text = $"{GameManager.Instance.userData.cashInt:N0}";
     }
+
 }

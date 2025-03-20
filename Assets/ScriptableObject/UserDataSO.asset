@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: UserDataSO
   m_EditorClassIdentifier: 
   userName: "\uAE40\uD559\uC601"
-  cash: 0
-  balance: 5000000
+  cash: 50000
+  balance: 50000
