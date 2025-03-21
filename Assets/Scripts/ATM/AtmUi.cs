@@ -3,7 +3,7 @@ using UnityEngine;
 
 // UI 갱신과 관련된 역할 담당
 
-public class ATMScreen : MonoBehaviour
+public class AtmUi : MonoBehaviour
 {
     public GameObject atmWindow;  // 인스펙터 창에서 넣어 줄 atmUi
 
