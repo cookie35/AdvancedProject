@@ -156,8 +156,9 @@ MonoBehaviour:
     id: 
     ps: 
     userName: 
-    cashInt: 0
-    balanceInt: 0
+    cash: 0
+    balance: 0
+  popupError: {fileID: 1139276351}
 --- !u!4 &19014479
 Transform:
   m_ObjectHideFlags: 0
@@ -185,7 +186,7 @@ GameObject:
   - component: {fileID: 47154134}
   - component: {fileID: 47154133}
   m_Layer: 5
-  m_Name: LoginBtnText
+  m_Name: LoginBtnTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -437,7 +438,7 @@ MonoBehaviour:
   m_CaretWidth: 1
   m_ReadOnly: 0
   m_RichText: 1
-  m_GlobalFontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_GlobalFontAsset: {fileID: 11400000, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
   m_OnFocusSelectAll: 1
   m_ResetOnDeActivation: 1
   m_RestoreOriginalTextOnEscape: 1
@@ -494,7 +495,7 @@ GameObject:
   - component: {fileID: 69148480}
   - component: {fileID: 69148479}
   m_Layer: 5
-  m_Name: LoginBtnText
+  m_Name: CancelBtnTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -627,13 +628,14 @@ GameObject:
   - component: {fileID: 85959075}
   - component: {fileID: 85959077}
   - component: {fileID: 85959076}
+  - component: {fileID: 85959078}
   m_Layer: 5
   m_Name: PopupSignUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &85959075
 RectTransform:
   m_ObjectHideFlags: 0
@@ -654,12 +656,12 @@ RectTransform:
   - {fileID: 1421681231}
   - {fileID: 502300754}
   - {fileID: 1523552827}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 7509174070272377090}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 960, y: 540}
-  m_SizeDelta: {x: 1920, y: 1080}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &85959076
 MonoBehaviour:
@@ -699,6 +701,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 85959074}
   m_CullTransparentMesh: 1
+--- !u!114 &85959078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 85959074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d06bc031cf214ef4b95e5cce170d7cd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popupSignUp: {fileID: 85959074}
+  idSignUpInputField: {fileID: 1720670410}
+  nameSignUpInputField: {fileID: 459634414}
+  psSignUpInputField: {fileID: 1490605749}
+  psConfirmSignUpInputField: {fileID: 157330138}
+  errorTxt: {fileID: 268260668}
+  cancelBtn: {fileID: 502300755}
+  signUpCompleteBtn: {fileID: 1523552828}
+  popupError: {fileID: 1139276351}
 --- !u!1 &92397917
 GameObject:
   m_ObjectHideFlags: 0
@@ -779,8 +802,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Enter text...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
+  m_sharedMaterial: {fileID: -1391647967017629737, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -903,7 +926,7 @@ GameObject:
   - component: {fileID: 104778194}
   - component: {fileID: 104778193}
   m_Layer: 5
-  m_Name: IDText
+  m_Name: IdLoginTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1025,45 +1048,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 104778191}
   m_CullTransparentMesh: 1
---- !u!1 &105004781
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 105004782}
-  m_Layer: 5
-  m_Name: LoginScreen
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &105004782
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 105004781}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 205478749}
-  - {fileID: 1370466228}
-  - {fileID: 1646725596}
-  - {fileID: 777052902}
-  m_Father: {fileID: 1144369435}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 900, y: 750}
-  m_Pivot: {x: 0.5, y: 0}
 --- !u!1 &132213482
 GameObject:
   m_ObjectHideFlags: 0
@@ -1075,7 +1059,7 @@ GameObject:
   - component: {fileID: 132213483}
   - component: {fileID: 132213484}
   m_Layer: 5
-  m_Name: Text Area
+  m_Name: Txt Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1203,8 +1187,8 @@ MonoBehaviour:
   m_VerticalScrollbarEventHandler: {fileID: 0}
   m_LayoutGroup: {fileID: 0}
   m_ScrollSensitivity: 1
-  m_ContentType: 0
-  m_InputType: 0
+  m_ContentType: 7
+  m_InputType: 2
   m_AsteriskChar: 42
   m_KeyboardType: 0
   m_LineType: 0
@@ -1246,7 +1230,7 @@ MonoBehaviour:
   m_CaretWidth: 1
   m_ReadOnly: 0
   m_RichText: 1
-  m_GlobalFontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_GlobalFontAsset: {fileID: 11400000, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
   m_OnFocusSelectAll: 1
   m_ResetOnDeActivation: 1
   m_RestoreOriginalTextOnEscape: 1
@@ -1327,8 +1311,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -13.599976, y: -31.900024}
-  m_SizeDelta: {x: 402.8, y: 261.2}
+  m_AnchoredPosition: {x: -13, y: -31}
+  m_SizeDelta: {x: 550, y: 340}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &198058881
 MonoBehaviour:
@@ -1343,7 +1327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.5529412}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1391,18 +1375,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 205478748}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 104778192}
   - {fileID: 555584603}
-  m_Father: {fileID: 105004782}
+  m_Father: {fileID: 1322821937}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -55}
+  m_AnchoredPosition: {x: 0, y: 111}
   m_SizeDelta: {x: 600, y: 100}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &268260666
@@ -1417,7 +1401,7 @@ GameObject:
   - component: {fileID: 268260669}
   - component: {fileID: 268260668}
   m_Layer: 5
-  m_Name: ConfirmText
+  m_Name: ErrorTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1440,7 +1424,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 266.2, y: 50}
+  m_SizeDelta: {x: 673, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &268260668
 MonoBehaviour:
@@ -1551,7 +1535,7 @@ GameObject:
   - component: {fileID: 273117896}
   - component: {fileID: 273117895}
   m_Layer: 5
-  m_Name: PSText
+  m_Name: PsSignUpText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1675,6 +1659,43 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 273117893}
   m_CullTransparentMesh: 1
+--- !u!1 &291254648
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 291254649}
+  m_Layer: 5
+  m_Name: Title
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &291254649
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 291254648}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1580189955}
+  - {fileID: 1023564460}
+  m_Father: {fileID: 1322821937}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: 493}
+  m_SizeDelta: {x: 790.7, y: 237.2}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &295834425
 GameObject:
   m_ObjectHideFlags: 0
@@ -1688,7 +1709,7 @@ GameObject:
   - component: {fileID: 295834428}
   - component: {fileID: 295834427}
   m_Layer: 5
-  m_Name: 10000Btn
+  m_Name: DepositBtn10000
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1758,7 +1779,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7633562066935309784}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PopupBank, Assembly-CSharp
         m_MethodName: Deposit
         m_Mode: 3
@@ -1831,7 +1852,7 @@ GameObject:
   - component: {fileID: 320024895}
   - component: {fileID: 320024896}
   m_Layer: 5
-  m_Name: Text Area
+  m_Name: Txt Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2019,7 +2040,7 @@ GameObject:
   - component: {fileID: 459634415}
   - component: {fileID: 459634414}
   m_Layer: 5
-  m_Name: NameInputField
+  m_Name: NameSignUpInputField
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2136,7 +2157,7 @@ MonoBehaviour:
   m_CaretWidth: 1
   m_ReadOnly: 0
   m_RichText: 1
-  m_GlobalFontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_GlobalFontAsset: {fileID: 11400000, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
   m_OnFocusSelectAll: 1
   m_ResetOnDeActivation: 1
   m_RestoreOriginalTextOnEscape: 1
@@ -2351,7 +2372,7 @@ GameObject:
   - component: {fileID: 522635569}
   - component: {fileID: 522635568}
   m_Layer: 5
-  m_Name: PopupTxt
+  m_Name: PopupErrorTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2373,8 +2394,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 13.6, y: 31.9}
-  m_SizeDelta: {x: 290.66, y: 50}
+  m_AnchoredPosition: {x: 13, y: 84.3}
+  m_SizeDelta: {x: 330, y: 145}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &522635568
 MonoBehaviour:
@@ -2423,15 +2444,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -2485,7 +2506,7 @@ GameObject:
   - component: {fileID: 523372940}
   - component: {fileID: 523372939}
   m_Layer: 5
-  m_Name: DepositOKTxt
+  m_Name: WithdrawInputBtnTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2619,7 +2640,7 @@ GameObject:
   - component: {fileID: 539822487}
   - component: {fileID: 539822486}
   m_Layer: 5
-  m_Name: OkTxt
+  m_Name: OkBtnTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2754,7 +2775,7 @@ GameObject:
   - component: {fileID: 555584605}
   - component: {fileID: 555584604}
   m_Layer: 5
-  m_Name: IDInputField
+  m_Name: IdLoginInputField
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2871,7 +2892,7 @@ MonoBehaviour:
   m_CaretWidth: 1
   m_ReadOnly: 0
   m_RichText: 1
-  m_GlobalFontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_GlobalFontAsset: {fileID: 11400000, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
   m_OnFocusSelectAll: 1
   m_ResetOnDeActivation: 1
   m_RestoreOriginalTextOnEscape: 1
@@ -2928,7 +2949,7 @@ GameObject:
   - component: {fileID: 562261618}
   - component: {fileID: 562261617}
   m_Layer: 5
-  m_Name: SignupBtnText
+  m_Name: SignupBtnTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3130,8 +3151,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Enter text...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
+  m_sharedMaterial: {fileID: -1391647967017629737, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3375,8 +3396,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5.6, y: -49.6}
-  m_SizeDelta: {x: 222.9, y: 67.3}
+  m_AnchoredPosition: {x: 5.6, y: -70}
+  m_SizeDelta: {x: 222.9, y: 66.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &672704223
 MonoBehaviour:
@@ -3578,7 +3599,7 @@ GameObject:
   - component: {fileID: 715884151}
   - component: {fileID: 715884150}
   m_Layer: 5
-  m_Name: NameText
+  m_Name: NameSignUpTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3691,7 +3712,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &715884151
@@ -3728,17 +3749,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 777052901}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 562261616}
-  m_Father: {fileID: 105004782}
+  m_Father: {fileID: 1322821937}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 14.6, y: -484}
+  m_AnchoredPosition: {x: 14.599937, y: -318}
   m_SizeDelta: {x: 500, y: 86.51}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &777052903
@@ -3836,7 +3857,7 @@ GameObject:
   - component: {fileID: 781182780}
   - component: {fileID: 781182779}
   m_Layer: 5
-  m_Name: PSInputField
+  m_Name: PsLoginInputField
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3910,8 +3931,8 @@ MonoBehaviour:
   m_VerticalScrollbarEventHandler: {fileID: 0}
   m_LayoutGroup: {fileID: 0}
   m_ScrollSensitivity: 1
-  m_ContentType: 0
-  m_InputType: 0
+  m_ContentType: 7
+  m_InputType: 2
   m_AsteriskChar: 42
   m_KeyboardType: 0
   m_LineType: 0
@@ -3953,7 +3974,7 @@ MonoBehaviour:
   m_CaretWidth: 1
   m_ReadOnly: 0
   m_RichText: 1
-  m_GlobalFontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_GlobalFontAsset: {fileID: 11400000, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
   m_OnFocusSelectAll: 1
   m_ResetOnDeActivation: 1
   m_RestoreOriginalTextOnEscape: 1
@@ -4010,7 +4031,7 @@ GameObject:
   - component: {fileID: 781588329}
   - component: {fileID: 781588328}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4057,8 +4078,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u200B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
+  m_sharedMaterial: {fileID: -1391647967017629737, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4144,7 +4165,7 @@ GameObject:
   - component: {fileID: 817686700}
   - component: {fileID: 817686699}
   m_Layer: 5
-  m_Name: PSText
+  m_Name: PsLoginTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4278,7 +4299,7 @@ GameObject:
   - component: {fileID: 861067860}
   - component: {fileID: 861067859}
   m_Layer: 5
-  m_Name: 10000Text
+  m_Name: DepositBtnTxt10000
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4325,7 +4346,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 10,000
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4389,7 +4410,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &861067860
@@ -4411,7 +4432,7 @@ GameObject:
   - component: {fileID: 879907147}
   - component: {fileID: 879907148}
   m_Layer: 5
-  m_Name: Text Area
+  m_Name: Txt Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4464,7 +4485,7 @@ GameObject:
   - component: {fileID: 887894654}
   - component: {fileID: 887894653}
   m_Layer: 5
-  m_Name: BackText
+  m_Name: DepositBackBtnTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4598,7 +4619,7 @@ GameObject:
   - component: {fileID: 946095405}
   - component: {fileID: 946095404}
   m_Layer: 5
-  m_Name: InputText
+  m_Name: InputTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4892,8 +4913,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Enter text...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
+  m_sharedMaterial: {fileID: -1391647967017629737, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4966,6 +4987,140 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 976006341}
+  m_CullTransparentMesh: 1
+--- !u!1 &1023564459
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1023564460}
+  - component: {fileID: 1023564462}
+  - component: {fileID: 1023564461}
+  m_Layer: 5
+  m_Name: ATM
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1023564460
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023564459}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 291254649}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -161}
+  m_SizeDelta: {x: 500, y: 44.399994}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1023564461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023564459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: ATM
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
+  m_sharedMaterial: {fileID: -1391647967017629737, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 80
+  m_fontSizeBase: 80
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1023564462
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023564459}
   m_CullTransparentMesh: 1
 --- !u!1 &1026263862
 GameObject:
@@ -5047,8 +5202,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Enter text...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
+  m_sharedMaterial: {fileID: -1391647967017629737, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5134,7 +5289,7 @@ GameObject:
   - component: {fileID: 1054343409}
   - component: {fileID: 1054343408}
   m_Layer: 5
-  m_Name: 50000Text
+  m_Name: DepositBtnTxt50000
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5181,7 +5336,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 50,000
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -5245,7 +5400,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1054343409
@@ -5304,7 +5459,7 @@ GameObject:
   - component: {fileID: 1104581150}
   - component: {fileID: 1104581151}
   m_Layer: 5
-  m_Name: Text Area
+  m_Name: Txt Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5356,13 +5511,14 @@ GameObject:
   - component: {fileID: 1139276348}
   - component: {fileID: 1139276350}
   - component: {fileID: 1139276349}
+  - component: {fileID: 1139276351}
   m_Layer: 5
   m_Name: PopupError
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1139276348
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5376,12 +5532,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 198058880}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 7509174070272377090}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 960, y: 540}
-  m_SizeDelta: {x: 1920, y: 1080}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1139276349
 MonoBehaviour:
@@ -5421,145 +5577,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1139276347}
   m_CullTransparentMesh: 1
---- !u!1 &1144369434
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1144369435}
-  - component: {fileID: 1144369438}
-  - component: {fileID: 1144369437}
-  - component: {fileID: 1144369436}
-  - component: {fileID: 1144369439}
-  m_Layer: 5
-  m_Name: PopupLogin
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1144369435
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1144369434}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1210915610}
-  - {fileID: 1753266852}
-  - {fileID: 105004782}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
---- !u!114 &1144369436
+--- !u!114 &1139276351
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1144369434}
+  m_GameObject: {fileID: 1139276347}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Script: {fileID: 11500000, guid: ad57ad33ad3001a47ba612042c2346d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
---- !u!114 &1144369437
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1144369434}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 1
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1920, y: 1080}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
---- !u!223 &1144369438
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1144369434}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 25
-  m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_TargetDisplay: 0
---- !u!114 &1144369439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1144369434}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d06bc031cf214ef4b95e5cce170d7cd3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  idLoginInputField: {fileID: 555584604}
-  psLoginInputField: {fileID: 781182779}
-  idSignUpInputField: {fileID: 1720670410}
-  nameSignUpInputField: {fileID: 459634414}
-  psSignUpInputField: {fileID: 1490605749}
-  psConfirmSignUpInputField: {fileID: 157330138}
-  loginButton: {fileID: 1646725595}
-  signUpButton: {fileID: 777052901}
-  signUpCancelButton: {fileID: 502300753}
-  signUpConfirmButton: {fileID: 157330136}
-  errorCloseButton: {fileID: 0}
-  errorText: {fileID: 0}
-  confirmText: {fileID: 268260668}
-  atmUi: {fileID: 4080088805258106959}
-  signUpPanel: {fileID: 85959074}
-  errorPanel: {fileID: 0}
-  userData:
-    id: 
-    ps: 
-    userName: 
-    cashInt: 0
-    balanceInt: 0
+  popupError: {fileID: 1139276347}
+  popupErrorTxt: {fileID: 522635568}
+  okBtn: {fileID: 672704223}
+  popupSignUp: {fileID: 85959078}
 --- !u!1 &1175582532
 GameObject:
   m_ObjectHideFlags: 0
@@ -5571,7 +5604,7 @@ GameObject:
   - component: {fileID: 1175582533}
   - component: {fileID: 1175582534}
   m_Layer: 5
-  m_Name: Text Area
+  m_Name: Txt Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5623,7 +5656,7 @@ GameObject:
   - component: {fileID: 1203685139}
   - component: {fileID: 1203685140}
   m_Layer: 5
-  m_Name: Text Area
+  m_Name: Txt Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5664,81 +5697,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Padding: {x: -8, y: -5, z: -8, w: -5}
   m_Softness: {x: 0, y: 0}
---- !u!1 &1210915609
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1210915610}
-  - component: {fileID: 1210915612}
-  - component: {fileID: 1210915611}
-  m_Layer: 5
-  m_Name: BackGround
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1210915610
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1210915609}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1144369435}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1210915611
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1210915609}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.642035, b: 0.3679244, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1210915612
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1210915609}
-  m_CullTransparentMesh: 1
 --- !u!1 &1213198803
 GameObject:
   m_ObjectHideFlags: 0
@@ -5819,8 +5777,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Enter text...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
+  m_sharedMaterial: {fileID: -1391647967017629737, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5906,7 +5864,7 @@ GameObject:
   - component: {fileID: 1230187025}
   - component: {fileID: 1230187024}
   m_Layer: 5
-  m_Name: IDText
+  m_Name: IdSignUpTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6080,7 +6038,7 @@ GameObject:
   - component: {fileID: 1297535619}
   - component: {fileID: 1297535618}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6127,8 +6085,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u200B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
+  m_sharedMaterial: {fileID: -1391647967017629737, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6215,7 +6173,7 @@ GameObject:
   - component: {fileID: 1307798644}
   - component: {fileID: 1307798643}
   m_Layer: 5
-  m_Name: 30000Btn
+  m_Name: DepositBtn30000
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6285,7 +6243,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7633562066935309784}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PopupBank, Assembly-CSharp
         m_MethodName: Deposit
         m_Mode: 3
@@ -6347,6 +6305,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1307798641}
   m_CullTransparentMesh: 1
+--- !u!1 &1322821936
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1322821937}
+  - component: {fileID: 1322821938}
+  m_Layer: 0
+  m_Name: PopupLogin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1322821937
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322821936}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1637904558}
+  - {fileID: 291254649}
+  - {fileID: 205478749}
+  - {fileID: 1370466228}
+  - {fileID: 1646725596}
+  - {fileID: 777052902}
+  m_Father: {fileID: 7509174070272377090}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1322821938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322821936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cce1c308cdb48544d843dbeda14e1548, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idLoginInputField: {fileID: 555584604}
+  psLoginInputField: {fileID: 781182779}
+  loginBtn: {fileID: 1646725597}
+  signUpBtn: {fileID: 777052903}
+  popupBank: {fileID: 1502515416}
+  popupSignUp: {fileID: 85959078}
+  popupError: {fileID: 1139276351}
 --- !u!1 &1328129807
 GameObject:
   m_ObjectHideFlags: 0
@@ -6359,7 +6374,7 @@ GameObject:
   - component: {fileID: 1328129810}
   - component: {fileID: 1328129809}
   m_Layer: 5
-  m_Name: 30000Text
+  m_Name: DepositBtnTxt30000
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6406,7 +6421,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 30,000
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -6470,7 +6485,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1328129810
@@ -6540,8 +6555,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u200B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
+  m_sharedMaterial: {fileID: -1391647967017629737, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6638,18 +6653,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1370466227}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 817686698}
   - {fileID: 781182778}
-  m_Father: {fileID: 105004782}
+  m_Father: {fileID: 1322821937}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -177}
+  m_AnchoredPosition: {x: 0, y: -11}
   m_SizeDelta: {x: 600, y: 100}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &1391545262
@@ -6664,7 +6679,7 @@ GameObject:
   - component: {fileID: 1391545265}
   - component: {fileID: 1391545264}
   m_Layer: 5
-  m_Name: SignupBtnText
+  m_Name: signUpCompleteBtnTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6796,7 +6811,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1418310624}
   m_Layer: 5
-  m_Name: PSconfirm
+  m_Name: PsConfirm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6835,7 +6850,7 @@ GameObject:
   - component: {fileID: 1421681233}
   - component: {fileID: 1421681232}
   m_Layer: 5
-  m_Name: ConfirmBG
+  m_Name: ErrorWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6911,7 +6926,7 @@ GameObject:
   - component: {fileID: 1428118941}
   - component: {fileID: 1428118940}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6958,8 +6973,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u200B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
+  m_sharedMaterial: {fileID: -1391647967017629737, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7046,7 +7061,7 @@ GameObject:
   - component: {fileID: 1442772370}
   - component: {fileID: 1442772369}
   m_Layer: 5
-  m_Name: 50000Btn
+  m_Name: DepositBtn50000
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7116,7 +7131,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7633562066935309784}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PopupBank, Assembly-CSharp
         m_MethodName: Deposit
         m_Mode: 3
@@ -7177,140 +7192,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1442772367}
-  m_CullTransparentMesh: 1
---- !u!1 &1449716625
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1449716626}
-  - component: {fileID: 1449716628}
-  - component: {fileID: 1449716627}
-  m_Layer: 5
-  m_Name: ATM
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1449716626
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1449716625}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1753266852}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -161}
-  m_SizeDelta: {x: 500, y: 44.399994}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1449716627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1449716625}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: ATM
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
-  m_sharedMaterial: {fileID: -1391647967017629737, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 80
-  m_fontSizeBase: 80
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 1
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &1449716628
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1449716625}
   m_CullTransparentMesh: 1
 --- !u!1 &1478719079
 GameObject:
@@ -7433,7 +7314,7 @@ GameObject:
   - component: {fileID: 1481427599}
   - component: {fileID: 1481427598}
   m_Layer: 5
-  m_Name: WithdrawInput
+  m_Name: WithdrawInputField
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7550,7 +7431,7 @@ MonoBehaviour:
   m_CaretWidth: 1
   m_ReadOnly: 0
   m_RichText: 1
-  m_GlobalFontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_GlobalFontAsset: {fileID: 11400000, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
   m_OnFocusSelectAll: 1
   m_ResetOnDeActivation: 1
   m_RestoreOriginalTextOnEscape: 1
@@ -7608,7 +7489,7 @@ GameObject:
   - component: {fileID: 1490605750}
   - component: {fileID: 1490605749}
   m_Layer: 5
-  m_Name: PSInputField
+  m_Name: PsSignUpInputField
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7682,8 +7563,8 @@ MonoBehaviour:
   m_VerticalScrollbarEventHandler: {fileID: 0}
   m_LayoutGroup: {fileID: 0}
   m_ScrollSensitivity: 1
-  m_ContentType: 0
-  m_InputType: 0
+  m_ContentType: 7
+  m_InputType: 2
   m_AsteriskChar: 42
   m_KeyboardType: 0
   m_LineType: 0
@@ -7725,7 +7606,7 @@ MonoBehaviour:
   m_CaretWidth: 1
   m_ReadOnly: 0
   m_RichText: 1
-  m_GlobalFontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_GlobalFontAsset: {fileID: 11400000, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
   m_OnFocusSelectAll: 1
   m_ResetOnDeActivation: 1
   m_RestoreOriginalTextOnEscape: 1
@@ -7770,6 +7651,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1490605747}
   m_CullTransparentMesh: 1
+--- !u!1 &1502515414
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1502515415}
+  - component: {fileID: 1502515416}
+  m_Layer: 0
+  m_Name: PopupBank
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1502515415
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502515414}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -960, y: -540, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4253528234233209373}
+  - {fileID: 5650262428405319300}
+  - {fileID: 8912637111108205721}
+  - {fileID: 1286266121056996230}
+  - {fileID: 2673814972627682080}
+  m_Father: {fileID: 7509174070272377090}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1502515416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502515414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f979429592d47e47a34414f7a1eed8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popupBank: {fileID: 1502515414}
+  cashNum: {fileID: 2504219624204901157}
+  userName: {fileID: 5321227863267679652}
+  balanceNum: {fileID: 6078402401703554610}
+  depositBtn: {fileID: 554985996150308010}
+  withdrawBtn: {fileID: 4071741993040538011}
+  depositUi: {fileID: 1616016275}
+  depositBtn10000: {fileID: 295834427}
+  depositBtn30000: {fileID: 1307798643}
+  depositBtn50000: {fileID: 1442772369}
+  depositInputField: {fileID: 64709350}
+  depositInputBtn: {fileID: 1724678803}
+  depositBackBtn: {fileID: 2054342775}
+  withdrawUi: {fileID: 1478719079}
+  withdrawBtn10000: {fileID: 1846969393}
+  withdrawBtn30000: {fileID: 1710443438}
+  withdrawBtn50000: {fileID: 1738358137}
+  withdrawInputField: {fileID: 1481427598}
+  withdrawInputBtn: {fileID: 1894641683}
+  withdrawBackBtn: {fileID: 1830722637}
 --- !u!1 &1505461350
 GameObject:
   m_ObjectHideFlags: 0
@@ -7782,7 +7732,7 @@ GameObject:
   - component: {fileID: 1505461353}
   - component: {fileID: 1505461352}
   m_Layer: 5
-  m_Name: 50000Text
+  m_Name: WithdrawBtnTxt50000
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7829,7 +7779,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 50,000
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -7893,7 +7843,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1505461353
@@ -7917,7 +7867,7 @@ GameObject:
   - component: {fileID: 1523552829}
   - component: {fileID: 1523552828}
   m_Layer: 5
-  m_Name: SignupBtn
+  m_Name: SignUpCompleteBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8025,7 +7975,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1523552826}
   m_CullTransparentMesh: 1
---- !u!1 &1546964704
+--- !u!1 &1580189954
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8033,9 +7983,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1546964705}
-  - component: {fileID: 1546964707}
-  - component: {fileID: 1546964706}
+  - component: {fileID: 1580189955}
+  - component: {fileID: 1580189957}
+  - component: {fileID: 1580189956}
   m_Layer: 5
   m_Name: Sparta Bank
   m_TagString: Untagged
@@ -8043,32 +7993,32 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &1546964705
+--- !u!224 &1580189955
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1546964704}
+  m_GameObject: {fileID: 1580189954}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1753266852}
+  m_Father: {fileID: 291254649}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -81}
   m_SizeDelta: {x: 500, y: 44.399994}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1546964706
+--- !u!114 &1580189956
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1546964704}
+  m_GameObject: {fileID: 1580189954}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
@@ -8151,13 +8101,13 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &1546964707
+--- !u!222 &1580189957
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1546964704}
+  m_GameObject: {fileID: 1580189954}
   m_CullTransparentMesh: 1
 --- !u!1 &1610283879
 GameObject:
@@ -8171,7 +8121,7 @@ GameObject:
   - component: {fileID: 1610283882}
   - component: {fileID: 1610283881}
   m_Layer: 5
-  m_Name: InputText
+  m_Name: InputTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8413,7 +8363,7 @@ GameObject:
   - component: {fileID: 1626241987}
   - component: {fileID: 1626241986}
   m_Layer: 5
-  m_Name: 10000Text
+  m_Name: WithdrawBtnTxt10000
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8460,7 +8410,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 10,000
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -8524,7 +8474,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1626241987
@@ -8534,6 +8484,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1626241984}
+  m_CullTransparentMesh: 1
+--- !u!1 &1637904557
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1637904558}
+  - component: {fileID: 1637904560}
+  - component: {fileID: 1637904559}
+  m_Layer: 5
+  m_Name: BackGround
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1637904558
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1637904557}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1322821937}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1637904559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1637904557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0.642035, b: 0.3679244, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1637904560
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1637904557}
   m_CullTransparentMesh: 1
 --- !u!1 &1646725595
 GameObject:
@@ -8561,17 +8586,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1646725595}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 47154132}
-  m_Father: {fileID: 105004782}
+  m_Father: {fileID: 1322821937}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 14.6, y: -366}
+  m_AnchoredPosition: {x: 14.599937, y: -200}
   m_SizeDelta: {x: 500, y: 86.51}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1646725597
@@ -8736,8 +8761,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Enter text...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
+  m_sharedMaterial: {fileID: -1391647967017629737, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8824,7 +8849,7 @@ GameObject:
   - component: {fileID: 1710443439}
   - component: {fileID: 1710443438}
   m_Layer: 5
-  m_Name: 30000Btn
+  m_Name: WithdrawBtn30000
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8894,7 +8919,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7633562066935309784}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PopupBank, Assembly-CSharp
         m_MethodName: WithDraw
         m_Mode: 3
@@ -8957,7 +8982,7 @@ GameObject:
   - component: {fileID: 1720670411}
   - component: {fileID: 1720670410}
   m_Layer: 5
-  m_Name: IDInputField
+  m_Name: IdSignUpInputField
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9074,7 +9099,7 @@ MonoBehaviour:
   m_CaretWidth: 1
   m_ReadOnly: 0
   m_RichText: 1
-  m_GlobalFontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_GlobalFontAsset: {fileID: 11400000, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
   m_OnFocusSelectAll: 1
   m_ResetOnDeActivation: 1
   m_RestoreOriginalTextOnEscape: 1
@@ -9132,7 +9157,7 @@ GameObject:
   - component: {fileID: 1724678804}
   - component: {fileID: 1724678803}
   m_Layer: 5
-  m_Name: DepositBtn
+  m_Name: DepositInputBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9202,7 +9227,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7633562066935309784}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PopupBank, Assembly-CSharp
         m_MethodName: DepositInputField
         m_Mode: 1
@@ -9265,7 +9290,7 @@ GameObject:
   - component: {fileID: 1738358138}
   - component: {fileID: 1738358137}
   m_Layer: 5
-  m_Name: 50000Btn
+  m_Name: WithdrawBtn50000
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9335,7 +9360,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7633562066935309784}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PopupBank, Assembly-CSharp
         m_MethodName: WithDraw
         m_Mode: 3
@@ -9397,7 +9422,7 @@ GameObject:
   - component: {fileID: 1743882136}
   - component: {fileID: 1743882135}
   m_Layer: 5
-  m_Name: DepositOKTxt
+  m_Name: DepositInputBtnTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9557,43 +9582,6 @@ RectTransform:
   m_AnchoredPosition: {x: 515, y: -471.03497}
   m_SizeDelta: {x: 500, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1753266851
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1753266852}
-  m_Layer: 5
-  m_Name: Title
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1753266852
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1753266851}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1546964705}
-  - {fileID: 1449716626}
-  m_Father: {fileID: 1144369435}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -47}
-  m_SizeDelta: {x: 790.7, y: 237.2}
-  m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &1806321654
 GameObject:
   m_ObjectHideFlags: 0
@@ -9675,7 +9663,7 @@ GameObject:
   - component: {fileID: 1830722638}
   - component: {fileID: 1830722637}
   m_Layer: 5
-  m_Name: BackBtn
+  m_Name: WithdrawBackBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9875,8 +9863,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Enter text...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
+  m_sharedMaterial: {fileID: -1391647967017629737, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9963,7 +9951,7 @@ GameObject:
   - component: {fileID: 1846969394}
   - component: {fileID: 1846969393}
   m_Layer: 5
-  m_Name: 10000Btn
+  m_Name: WithdrawBtn10000
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10033,7 +10021,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7633562066935309784}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PopupBank, Assembly-CSharp
         m_MethodName: WithDraw
         m_Mode: 3
@@ -10094,7 +10082,7 @@ GameObject:
   - component: {fileID: 1862675986}
   - component: {fileID: 1862675987}
   m_Layer: 5
-  m_Name: Text Area
+  m_Name: Txt Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10147,7 +10135,7 @@ GameObject:
   - component: {fileID: 1865732899}
   - component: {fileID: 1865732898}
   m_Layer: 5
-  m_Name: 30000Text
+  m_Name: WithdrawBtnTxt30000
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10194,7 +10182,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 30,000
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -10258,7 +10246,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1865732899
@@ -10282,7 +10270,7 @@ GameObject:
   - component: {fileID: 1894641684}
   - component: {fileID: 1894641683}
   m_Layer: 5
-  m_Name: WithdrawBtn
+  m_Name: WithdrawInputBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10352,7 +10340,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7633562066935309784}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PopupBank, Assembly-CSharp
         m_MethodName: WithDrawInputField
         m_Mode: 1
@@ -10414,7 +10402,7 @@ GameObject:
   - component: {fileID: 1918479273}
   - component: {fileID: 1918479272}
   m_Layer: 5
-  m_Name: PSconfirmText
+  m_Name: PsConfirmTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10550,7 +10538,7 @@ GameObject:
   - component: {fileID: 1926709256}
   - component: {fileID: 1926709255}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10597,8 +10585,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u200B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
+  m_sharedMaterial: {fileID: -1391647967017629737, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -10684,7 +10672,7 @@ GameObject:
   - component: {fileID: 1930976491}
   - component: {fileID: 1930976490}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10731,8 +10719,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u200B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
+  m_sharedMaterial: {fileID: -1391647967017629737, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -10795,7 +10783,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1930976491
@@ -10865,8 +10853,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u200B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
+  m_sharedMaterial: {fileID: -1391647967017629737, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -10953,7 +10941,7 @@ GameObject:
   - component: {fileID: 2054342776}
   - component: {fileID: 2054342775}
   m_Layer: 5
-  m_Name: BackBtn
+  m_Name: DepositBackBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11084,7 +11072,7 @@ GameObject:
   - component: {fileID: 2075015974}
   - component: {fileID: 2075015975}
   m_Layer: 5
-  m_Name: Text Area
+  m_Name: Txt Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11137,7 +11125,7 @@ GameObject:
   - component: {fileID: 2084289457}
   - component: {fileID: 2084289456}
   m_Layer: 5
-  m_Name: BackText
+  m_Name: WithdrawBackBtnTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11271,7 +11259,7 @@ GameObject:
   - component: {fileID: 2104184294}
   - component: {fileID: 2104184293}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11318,8 +11306,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u200B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
+  m_sharedMaterial: {fileID: -1391647967017629737, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -11405,7 +11393,7 @@ GameObject:
   - component: {fileID: 2118923258}
   - component: {fileID: 2118923257}
   m_Layer: 5
-  m_Name: SignupBG
+  m_Name: BackGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11548,8 +11536,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Enter text...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
+  m_sharedMaterial: {fileID: -1391647967017629737, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -11740,7 +11728,7 @@ GameObject:
   - component: {fileID: 5720545988477023579}
   - component: {fileID: 268389933910037781}
   m_Layer: 5
-  m_Name: CashText
+  m_Name: CashTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11882,7 +11870,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8120185790365264913}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -11890,11 +11878,11 @@ RectTransform:
   - {fileID: 1426378350423853722}
   - {fileID: 3906207005556001759}
   - {fileID: 4072880936625364715}
-  m_Father: {fileID: 7509174070272377090}
+  m_Father: {fileID: 1502515415}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 222}
+  m_AnchoredPosition: {x: 1920, y: 762}
   m_SizeDelta: {x: 600, y: 200}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &1324459667552491640
@@ -12000,7 +11988,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -12064,7 +12052,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &2565789967516683448
@@ -12168,7 +12156,7 @@ GameObject:
   - component: {fileID: 1451561539618842038}
   - component: {fileID: 8621406468447227326}
   m_Layer: 5
-  m_Name: WithdrawBtnText
+  m_Name: WithdrawBtnTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12181,7 +12169,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8698425161547348318}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -12190,11 +12178,11 @@ RectTransform:
   - {fileID: 4693657270638057448}
   - {fileID: 1616016276}
   - {fileID: 1478719080}
-  m_Father: {fileID: 7509174070272377090}
+  m_Father: {fileID: 1502515415}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 1920, y: 0}
   m_SizeDelta: {x: 600, y: 600}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &2788933494547066257
@@ -12360,7 +12348,7 @@ GameObject:
   - component: {fileID: 5508455595616557689}
   - component: {fileID: 6588179384833246892}
   m_Layer: 5
-  m_Name: BalanceText
+  m_Name: BalanceTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12465,15 +12453,13 @@ GameObject:
   - component: {fileID: 5261935868107795671}
   - component: {fileID: 6051300897278932389}
   - component: {fileID: 4536057362886758957}
-  - component: {fileID: 7633562066935309783}
-  - component: {fileID: 7633562066935309784}
   m_Layer: 5
-  m_Name: PopupBank
+  m_Name: AtmUi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4253528234233209373
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12481,17 +12467,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5993836693033483926}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7509174070272377090}
+  m_Father: {fileID: 1502515415}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 960, y: 540}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4536057362886758957
 MonoBehaviour:
@@ -12522,7 +12508,7 @@ GameObject:
   - component: {fileID: 5012105677084711540}
   - component: {fileID: 2788933494547066257}
   m_Layer: 5
-  m_Name: DepositBtnText
+  m_Name: DepositBtnTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12587,7 +12573,7 @@ GameObject:
   - component: {fileID: 1324459667552491640}
   - component: {fileID: 2504219624204901157}
   m_Layer: 5
-  m_Name: CashInt
+  m_Name: CashNum
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12739,18 +12725,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1169418445588433957}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5691250017372420882}
   - {fileID: 8145435084363879051}
-  m_Father: {fileID: 7509174070272377090}
+  m_Father: {fileID: 1502515415}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -47}
+  m_AnchoredPosition: {x: 960, y: 1033}
   m_SizeDelta: {x: 790.7, y: 237.2}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!224 &5691250017372420882
@@ -12843,7 +12829,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8c3619ddb8899b1418eb98586b8df84e, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -12907,7 +12893,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &6392492387757211613
@@ -13108,11 +13094,10 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4253528234233209373}
-  - {fileID: 5650262428405319300}
-  - {fileID: 8912637111108205721}
-  - {fileID: 1286266121056996230}
-  - {fileID: 2673814972627682080}
+  - {fileID: 1322821937}
+  - {fileID: 85959075}
+  - {fileID: 1502515415}
+  - {fileID: 1139276348}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -13120,38 +13105,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &7633562066935309783
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4080088805258106959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f979429592d47e47a34414f7a1eed8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  atmWindow: {fileID: 4080088805258106959}
-  cashTxt: {fileID: 2504219624204901157}
-  balanceTxt: {fileID: 6078402401703554610}
-  depositButton: {fileID: 5411165079938270815}
-  withdrawButton: {fileID: 604177451202465441}
---- !u!114 &7633562066935309784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4080088805258106959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52e2b695a2506d444a958c0e188b39d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  popupScreen: {fileID: 1139276347}
-  depositInputField: {fileID: 64709350}
-  withdrawInputField: {fileID: 1481427598}
 --- !u!224 &7689563949385769670
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13345,7 +13298,7 @@ GameObject:
   - component: {fileID: 2385328905413166616}
   - component: {fileID: 6078402401703554610}
   m_Layer: 5
-  m_Name: BalanceInt
+  m_Name: BalanceNum
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13470,11 +13423,11 @@ RectTransform:
   m_Children:
   - {fileID: 2947423810864450130}
   - {fileID: 7689563949385769670}
-  m_Father: {fileID: 7509174070272377090}
+  m_Father: {fileID: 1502515415}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 76, y: 0}
+  m_AnchoredPosition: {x: 76, y: 540}
   m_SizeDelta: {x: 485.8, y: 264.1}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &9146241044067509486
@@ -13533,7 +13486,4 @@ SceneRoots:
   - {fileID: 705507995}
   - {fileID: 1806321657}
   - {fileID: 19014479}
-  - {fileID: 1144369435}
-  - {fileID: 85959075}
   - {fileID: 7509174070272377090}
-  - {fileID: 1139276348}
