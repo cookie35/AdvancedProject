@@ -16,6 +16,7 @@ public class PopupBank : MonoBehaviour
     [Header("ATM")]
     public Button depositBtn;
     public Button withdrawBtn;
+    public Button sendBtn;
 
     [Header("DepositUi")]
     public GameObject depositUi;  // 입금 UI
@@ -35,13 +36,24 @@ public class PopupBank : MonoBehaviour
     public Button withdrawInputBtn;
     public Button withdrawBackBtn;
 
+    [Header("SendUi")]
+    public GameObject sendUi;  // 송금 UI
+    public TMP_InputField sendNameInputField;
+    public TMP_InputField sendAmountInputField;
+    public Button sendInputBtn;
+    public Button sendBackBtn;
+
     [Header("PopupError")]
     public PopupError popupError;
 
     void Start()
     {
-        depositBtn.onClick.AddListener(DepositUi); 
-        withdrawBtn.onClick.AddListener(WithdrawUi);
+        depositBtn.onClick.AddListener(() => OpenUi(depositUi));
+        depositBackBtn.onClick.AddListener(() => CloseUi(depositUi));
+        withdrawBtn.onClick.AddListener(() => OpenUi(withdrawUi));
+        withdrawBackBtn.onClick.AddListener(() => CloseUi(withdrawUi));
+        sendBtn.onClick.AddListener(() => OpenUi(sendUi));
+        sendBackBtn.onClick.AddListener(() => CloseUi(sendUi));
 
         depositBtn10000.onClick.AddListener(() => Deposit(10000));  // 람다식을 사용하여 메서드에 각 금액을 매개변수로 넣어줌
         depositBtn30000.onClick.AddListener(() => Deposit(30000));
@@ -53,6 +65,8 @@ public class PopupBank : MonoBehaviour
         withdrawBtn50000.onClick.AddListener(() => Withdraw(50000));
         withdrawInputBtn.onClick.AddListener(WithdrawInputField);
 
+        sendInputBtn.onClick.AddListener(SendInputField);
+
         Refresh();
     }
 
@@ -63,14 +77,14 @@ public class PopupBank : MonoBehaviour
         balanceNum.text = $"{GameManager.Instance.userData.balance:N0}";
     }
 
-    public void DepositUi()
+    public void OpenUi(GameObject ui)
     {
-        depositUi.SetActive(true);
+        ui.SetActive(true);
     }
 
-    public void WithdrawUi()
+    public void CloseUi(GameObject ui)
     {
-        withdrawUi.SetActive(true);
+        ui.SetActive(false);
     }
 
     public void Deposit(int amount) // 해당 금액 누르면 입금
@@ -126,6 +140,44 @@ public class PopupBank : MonoBehaviour
         {
             Withdraw(withdrawAmount);
         }
+    }
+
+    public void SendInputField()
+    {
+        string sendName = sendNameInputField.text; 
+        string sendAmountTxt = sendAmountInputField.text;
+        int sendAmount;
+
+        if (string.IsNullOrEmpty(sendName) || string.IsNullOrEmpty(sendAmountTxt))
+        {
+            popupError.InputEmptyError();
+            return;
+        }
+        else if (!int.TryParse(sendAmountTxt, out sendAmount) || sendAmount <= 0)
+        {
+            popupError.MinusInputError();
+            return;
+        }
+        else if (GameManager.Instance.userData.balance < sendAmount)
+        {
+            popupError.NoMoneyError();
+            return;
+        }
+
+        UserData sendUserData = GameManager.Instance.GetUserData(sendName);
+
+        if (sendUserData == null)
+        {
+            popupError.UserNotFoundError();
+            return;
+        }
+
+        GameManager.Instance.userData.balance -= sendAmount; // 송금자의 계좌에서 송금액을 뺌    
+        sendUserData.balance += sendAmount;  // 타겟 대상의 계좌에 송금
+        GameManager.Instance.SaveUserData(GameManager.Instance.userData);  // 송금자의 데이터 저장
+        GameManager.Instance.SaveUserData(sendUserData);  // 타겟 대상의 데이터 저장
+
+        Refresh();
     }
 
 }

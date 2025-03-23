@@ -30,7 +30,7 @@ public class PopupLogin : MonoBehaviour
 
         if (string.IsNullOrEmpty(idLogin) || string.IsNullOrEmpty(psLogin))
         {
-            popupError.LoginInputEmptyError();
+            popupError.InputEmptyError();
             return;
         }
 

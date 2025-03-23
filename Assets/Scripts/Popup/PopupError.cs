@@ -34,7 +34,7 @@ public class PopupError : MonoBehaviour
         popupErrorTxt.text = "양수값을 입력해주세요.";
     }
 
-    public void LoginInputEmptyError()
+    public void InputEmptyError()
     {
         popupError.gameObject.SetActive(true);
         popupErrorTxt.text = "빈 칸에 값을 입력해주세요";
@@ -44,6 +44,12 @@ public class PopupError : MonoBehaviour
     {
         popupError.gameObject.SetActive(true);
         popupErrorTxt.text = "잘못된 아이디 또는 패스워드입니다.";
+    }
+
+    public void UserNotFoundError()
+    {
+        popupError.gameObject.SetActive(true);
+        popupErrorTxt.text = "대상이 없습니다.";
     }
 
     public void SignUpInputEmptyError()
@@ -69,6 +75,5 @@ public class PopupError : MonoBehaviour
         popupSignUp.errorTxt.gameObject.SetActive(true);
         popupSignUp.errorTxt.text = "비밀번호가 일치하지 않습니다.";
     }
-
 
 }

@@ -45,7 +45,7 @@ public class PopupSignUp : MonoBehaviour
 
         if (string.IsNullOrEmpty(idSignUp) || string.IsNullOrEmpty(nameSignUp) || string.IsNullOrEmpty(psSignUp) || string.IsNullOrEmpty(psConfirmSignUp))
         {
-            popupError.LoginInputEmptyError();
+            popupError.InputEmptyError();
             return;
         }
         else if (GameManager.Instance.LoadUserData(idSignUp) != null)

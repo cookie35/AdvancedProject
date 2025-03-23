@@ -34,21 +34,6 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public bool IsPasswordExist(string psSignUp) // 비밀번호 중복검사를 위한 메서드
-    {
-        string[] files = Directory.GetFiles(saveDirectory, "*.json");
-        foreach (string file in files)
-        {
-            string json = File.ReadAllText(file);
-            UserData userData = JsonUtility.FromJson<UserData>(json);
-            if (userData.ps == psSignUp)
-            {
-                return true;
-            }
-        }
-        return false;
-    }
-
     public void SignUpUserData(string idSignUp, string nameSignUp, string psSignUp)  // 회원가입한 데이터 정보 받아오는 메서드
     {
         UserData userData = new UserData();
@@ -80,4 +65,37 @@ public class GameManager : MonoBehaviour
         }
 
     }
+
+    public bool IsPasswordExist(string psSignUp) // 비밀번호 중복검사를 위한 메서드
+    {
+        string[] files = Directory.GetFiles(saveDirectory, "*.json");
+        foreach (string file in files)
+        {
+            string json = File.ReadAllText(file);
+            UserData userData = JsonUtility.FromJson<UserData>(json);
+            if (userData.ps == psSignUp)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    public UserData GetUserData(string sendName) // 송금 대상의 userData를 반환
+    {
+        string[] files = Directory.GetFiles(saveDirectory, "*.json");
+        foreach (string file in files)
+        {
+            string json = File.ReadAllText(file);
+            UserData userData = JsonUtility.FromJson<UserData>(json);
+            if (userData.userName == sendName || userData.id == sendName)
+            {
+                return userData;
+            }
+        }
+        return null;
+    }
+
+
 }
