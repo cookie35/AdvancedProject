@@ -153,7 +153,7 @@ public class PopupBank : MonoBehaviour
             popupError.ShowErrorType(ErrorType.InputEmpty);
             return;
         }
-        else if (!int.TryParse(sendAmountTxt, out sendAmount) || sendAmount <= 0)
+        else if (!int.TryParse(sendAmountTxt, out sendAmount) || sendAmount < 0)
         {
             popupError.ShowErrorType(ErrorType.MinusInput);
             return;

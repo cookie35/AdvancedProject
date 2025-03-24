@@ -40,47 +40,54 @@ public class PopupError : MonoBehaviour
 
     public void ShowErrorType(ErrorType errorType)
     {
-        TMP_Text nowTargetText = null;
+        TMP_Text nowTargetErrorTxt = null;
+        TMP_Text nowTargetSignupErrorTxt = null;
 
         if (ErrorType.ShowPopupError.HasFlag(errorType))
         {
             popupError.SetActive(true);
-            nowTargetText = popupErrorTxt;
+            nowTargetErrorTxt = popupErrorTxt;
         }
         else if (ErrorType.ShowPopupSignUp.HasFlag(errorType))
         {
+            popupError.SetActive(true);
+            nowTargetErrorTxt = popupErrorTxt;
             popupSignUp.errorTxt.gameObject.SetActive(true);
-            nowTargetText = popupSignUp.errorTxt;
+            nowTargetSignupErrorTxt = popupSignUp.errorTxt;
         }
 
         switch (errorType)
         {
             case ErrorType.NoMoney:
-                nowTargetText.text = "잔액이 부족합니다.";
+                nowTargetErrorTxt.text = "잔액이 부족합니다.";
                 break;
             case ErrorType.MinusInput:
-                nowTargetText.text = "양수값을 입력해주세요.";
+                nowTargetErrorTxt.text = "양수값을 입력해주세요.";
                 break;
             case ErrorType.InputEmpty:
-                nowTargetText.text = "빈 칸에 값을 입력해주세요";
+                nowTargetErrorTxt.text = "빈 칸에 값을 입력해주세요";
                 break;
             case ErrorType.WrongInputLogin:
-                nowTargetText.text = "잘못된 아이디 또는 패스워드입니다.";
+                nowTargetErrorTxt.text = "잘못된 아이디 또는 패스워드입니다.";
                 break;
             case ErrorType.UserNotFound:
-                nowTargetText.text = "대상이 없습니다.";
+                nowTargetErrorTxt.text = "대상이 없습니다.";
                 break;
             case ErrorType.SignUpInputEmpty:
-                nowTargetText.text = "빈 칸에 값을 입력해주세요";
+                nowTargetErrorTxt.text = "정보를 확인해주세요";
+                nowTargetSignupErrorTxt.text = "빈 칸에 값을 입력해주세요";
                 break;
             case ErrorType.IdExist:
-                nowTargetText.text = "이미 존재하는 아이디입니다.";
+                nowTargetErrorTxt.text = "정보를 확인해주세요";
+                nowTargetSignupErrorTxt.text = "이미 존재하는 아이디입니다.";
                 break;
             case ErrorType.PsExist:
-                nowTargetText.text = "이미 존재하는 비밀번호입니다.";
+                nowTargetErrorTxt.text = "정보를 확인해주세요";
+                nowTargetSignupErrorTxt.text = "이미 존재하는 비밀번호입니다.";
                 break;
             case ErrorType.PsNotMatch:
-                nowTargetText.text = "비밀번호가 일치하지 않습니다.";
+                nowTargetErrorTxt.text = "정보를 확인해주세요";
+                nowTargetSignupErrorTxt.text = "비밀번호가 일치하지 않습니다.";
                 break;
         }
     }
