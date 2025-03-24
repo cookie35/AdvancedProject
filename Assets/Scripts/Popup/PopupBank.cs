@@ -98,7 +98,7 @@ public class PopupBank : MonoBehaviour
         }
         else
         {
-            popupError.NoMoneyError();
+            popupError.ShowErrorType(ErrorType.NoMoney);
         }
     }
 
@@ -112,7 +112,7 @@ public class PopupBank : MonoBehaviour
         }
         else
         {
-            popupError.MinusInputError();
+            popupError.ShowErrorType(ErrorType.MinusInput);
         }
 
     }
@@ -128,7 +128,7 @@ public class PopupBank : MonoBehaviour
         }
         else
         {
-            popupError.NoMoneyError();
+            popupError.ShowErrorType(ErrorType.NoMoney);
         }
     }
 
@@ -150,17 +150,17 @@ public class PopupBank : MonoBehaviour
 
         if (string.IsNullOrEmpty(sendName) || string.IsNullOrEmpty(sendAmountTxt))
         {
-            popupError.InputEmptyError();
+            popupError.ShowErrorType(ErrorType.InputEmpty);
             return;
         }
         else if (!int.TryParse(sendAmountTxt, out sendAmount) || sendAmount <= 0)
         {
-            popupError.MinusInputError();
+            popupError.ShowErrorType(ErrorType.MinusInput);
             return;
         }
         else if (GameManager.Instance.userData.balance < sendAmount)
         {
-            popupError.NoMoneyError();
+            popupError.ShowErrorType(ErrorType.NoMoney);
             return;
         }
 
@@ -168,7 +168,7 @@ public class PopupBank : MonoBehaviour
 
         if (sendUserData == null)
         {
-            popupError.UserNotFoundError();
+            popupError.ShowErrorType(ErrorType.UserNotFound);
             return;
         }
 

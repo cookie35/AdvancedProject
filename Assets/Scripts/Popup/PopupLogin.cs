@@ -30,7 +30,7 @@ public class PopupLogin : MonoBehaviour
 
         if (string.IsNullOrEmpty(idLogin) || string.IsNullOrEmpty(psLogin))
         {
-            popupError.InputEmptyError();
+            popupError.ShowErrorType(ErrorType.InputEmpty);
             return;
         }
 
@@ -38,13 +38,13 @@ public class PopupLogin : MonoBehaviour
 
         if (loadedData == null)
         {
-            popupError.WrongInputLoginError();
+            popupError.ShowErrorType(ErrorType.WrongInputLogin);
             return;
         }
 
         if (idLogin != loadedData.id || psLogin != loadedData.ps)
         {
-            popupError.WrongInputLoginError();
+            popupError.ShowErrorType(ErrorType.WrongInputLogin);
             return;
         }
 

@@ -45,22 +45,22 @@ public class PopupSignUp : MonoBehaviour
 
         if (string.IsNullOrEmpty(idSignUp) || string.IsNullOrEmpty(nameSignUp) || string.IsNullOrEmpty(psSignUp) || string.IsNullOrEmpty(psConfirmSignUp))
         {
-            popupError.InputEmptyError();
+            popupError.ShowErrorType(ErrorType.InputEmpty);
             return;
         }
         else if (GameManager.Instance.LoadUserData(idSignUp) != null)
         {
-            popupError.IdExistError();
+            popupError.ShowErrorType(ErrorType.IdExist);
             return;
         }
         else if (GameManager.Instance.IsPasswordExist(psSignUp) == true)
         {
-            popupError.PsExistError();
+            popupError.ShowErrorType(ErrorType.PsExist);
             return;
         }
         else if (psSignUp != psConfirmSignUp)
         {
-            popupError.PsNotMatchError();
+            popupError.ShowErrorType(ErrorType.PsNotMatch);
             return;
         }
         else
